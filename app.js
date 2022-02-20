@@ -25,7 +25,10 @@ function checkValue() {
     // Retrieve user's guess
     var x = document.getElementById("aNumber").value;
     console.log("Retrieved number:", x);
-    if (x == randNum) {
+    if (attemptsLeft == 0 || message.innerHTML == "You guessed correct. Congratulations!") {
+        return;
+    }
+    else if (x == randNum) {
         console.log("done");
         guess++;
         attemptsLeft--;
